@@ -1,0 +1,45 @@
+.game__container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    position: relative;
+    flex-grow: 3;
+}
+
+.dies__container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap:10px;
+    max-width: 500px;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .game__container > h1 {
+        font-size: 1.8rem;
+    }
+}
+
+.btn {
+    min-width: 80px;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 3px;
+    letter-spacing: 2px;
+    border: none;
+    background-color: #5C2921;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #A8685E ;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}

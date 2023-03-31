@@ -1,0 +1,26 @@
+
+.die__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px 0px #6363635c;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.die__box:hover {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 767px) {
+    .die__box:hover {
+        transform: unset;
+    }
+}
+

@@ -1,0 +1,62 @@
+
+.game__history {
+    border-right: 1px solid #ececee;
+    padding: 20px;
+    flex-grow: 1;
+    transition: 0.3s;
+}
+
+.score__wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.score__wrapper > div {
+    gap: 5px;
+    width: 100%;
+    padding: 10px;
+    box-shadow: unset;
+    border: 1px solid #dddddd;
+}
+
+.score__wrapper p {
+    font-size: 0.55rem;
+}
+
+@media (max-width: 767px) {
+    .game__history {
+        border-right: unset;
+        border-top: 1px solid #ececee;
+        order: 2;
+    }
+}
+
+.rest__btn {
+    min-width: 80px;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 3px;
+    letter-spacing: 2px;
+    border: none;
+    background-color: #5C2921;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.rest__btn {
+    background-color: transparent;
+    border: 1px solid #5fa987;
+    color: #5fa987;
+    font-weight: 400;
+}
+
+.rest__btn:hover {
+    background-color: #5fa987;
+    color: white;
+}

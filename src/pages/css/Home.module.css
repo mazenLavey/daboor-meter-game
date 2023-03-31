@@ -1,0 +1,27 @@
+
+.header {
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #5fa987;
+    overflow: hidden;
+}
+
+.body {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 10px 20px 0px #49494996;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .body {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
