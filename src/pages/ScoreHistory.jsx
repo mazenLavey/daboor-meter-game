@@ -7,12 +7,9 @@ import { nanoid } from 'nanoid';
 const ScoreHistory = () => {
     const {scoreHistory, resetHistory} = useContext(GameContext);
     
-    if (scoreHistory.length > 0) {
-        const historyElement = scoreHistory.slice(0).reverse().map((score) => {
-            console.log(score)
-            return <ResultCard key={nanoid()} triesNum={score} animation={false} />
-        });
-    }
+    const historyElement = scoreHistory.slice(0).reverse().map((score) => {
+        return <ResultCard key={nanoid()} triesNum={score} animation={false} />
+    });
 
     return (
         <div className={ScoreHistoryCSS.game__history}>

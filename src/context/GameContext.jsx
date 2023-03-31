@@ -3,7 +3,6 @@ const GameContext = React.createContext();
 
 const GameContextProvider = (props)=>{
     const [scoreHistory, setScoreHistory ] = useState([]);
-    console.log(scoreHistory);
 
     function addToPlayerScoreHistory(score) {
         const updateScore = [...scoreHistory, score];
@@ -17,8 +16,10 @@ const GameContextProvider = (props)=>{
     }
 
     useEffect(()=>{
-        let x = JSON.parse(localStorage.getItem('DaboorScoreHistory'));
-        setScoreHistory(x);
+        if (localStorage.getItem('DaboorScoreHistory') !== null) {
+            let x = JSON.parse(localStorage.getItem('DaboorScoreHistory'));
+            setScoreHistory(x);
+        };
     }, [])
     
     return (
