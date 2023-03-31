@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
-// import {GameContext} from '../context/GameContext';
+import {GameContext} from '../context/GameContext';
 import GameBoardCSS from './css/GameBoard.module.css';
 import ResultCard from '../components/ResultCard';
 import Die from '../components/Die';
@@ -10,8 +10,7 @@ const GameBoard = () => {
     const [dice, setDice] = useState(newDiceSet());
     const [triesCount, setTriesCount] = useState(0);
     const [winGame, setWinGame] = useState(false);
-
-    // const {addToPlayerScoreHistory} = useContext(GameContext);
+    const {addToPlayerScoreHistory} = useContext(GameContext);
 
     // generate one die a time
     function generateNewDie() {
@@ -33,6 +32,7 @@ const GameBoard = () => {
 
     // generate a new set of dice when player plays again
     function newGame() {
+        addToPlayerScoreHistory(triesCount);
         setDice((prevSet) => {
             return prevSet.map(() => {
                 return generateNewDie();
@@ -78,13 +78,8 @@ const GameBoard = () => {
 
         if (allIsHeld && allSameValue) {
             setWinGame(() => true);
- 
         };
     }, [dice]);
-
-    // function x() {
-    //     addToPlayerScoreHistory(triesCount);
-    // }
 
     return (
         <div className={GameBoardCSS.game__container}>

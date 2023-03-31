@@ -6,54 +6,9 @@ import { nanoid } from 'nanoid';
 
 const ScoreHistory = () => {
     const {scoreHistory, resetHistory} = useContext(GameContext);
-
-    // // history rest
-    // function restHistory() {
-    //     setPlayerHistory(() => []);
-    //     localStorage.removeItem('score');
-    // };
-
-    //     // add To Player History after game ends
-    //     function addToPlayerHistory() {
-    //         if (winGame) {
-    //             setPlayerHistory((prevHistory) => {
-    //                 let result = resultBar();
-    //                 let bar = barStyle(result);
-    //                 return [
-    //                     ...prevHistory,
-    //                     {
-    //                         result: result,
-    //                         barStyle: bar
-    //                     }
-    //                 ]
-    //             });
-    //         };
-    //     };
     
-    //     addToPlayerHistory();
-
-    //         // save player score to the local storage
-
-    // function loadData() {
-    //     if (localStorage.getItem('score') !== null) {
-    //         if (localStorage.getItem('score').length > 0) {
-    //             let scoreData = JSON.parse(localStorage.getItem('score'));
-    //             setPlayerHistory(() => scoreData);
-    //         };
-    //     };
-    // };
-
-    // useEffect(() => {
-    //     if (playerHistory.length > 0) {
-    //         localStorage.setItem('score', JSON.stringify(playerHistory));
-    //     };
-
-    //     window.addEventListener('load', loadData, { once: true });
-    // }, [playerHistory]);
-
-    // render history of the game
-
-    const historyElement = scoreHistory.reverse().map((score) => {
+    const historyElement = scoreHistory.slice(0).reverse().map((score) => {
+        console.log(score)
         return <ResultCard key={nanoid()} triesNum={score} animation={false} />
     });
 
