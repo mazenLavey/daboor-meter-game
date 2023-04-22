@@ -1,4 +1,4 @@
-# A fun way to know how much lucky you are in numbers 	U+1F642
+# A fun way to know how much lucky you are in numbers :)
 
 ## live Demo: https://daboor-meter-game.netlify.app
 
